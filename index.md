@@ -1,6 +1,6 @@
-## Welcome to GitHub Pages
+## Welcome to Annotation-Extension
 
-You can use the [editor on GitHub](https://github.com/MANTENN/Annotation-Extension/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+This project is currently in the research/design phasel; feel free to pitch in your ideas on github.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
