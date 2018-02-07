@@ -21,10 +21,11 @@
 
 
 <style>
-    .annoweb.anno-light.anno-default-yellow {
+    
+    .annoweb.anno-highlight.anno-default-yellow, .annoweb.anno-tag.anno-highlight-filter.anno-default-yellow {
         background: #fdffb3;
     }
-    .annoweb.anno-light.anno-default-purple {
+    .annoweb.anno-highlight.anno-default-purple, .annoweb.anno-tag.anno-highlight-filter.anno-default-purple {
         background: #d5b3ff;
     }
     .annoweb.anno-quick-access-bar {
@@ -42,31 +43,83 @@
     body.annoweb.anno-spacer {
         padding-bottom: 50px;
     }
+    .annoweb.anno-spacer .annoweb.anno-container {
+        max-width: 100%;
+    }
     .annoweb.anno-group {
         position: relative;
+        display: block;
+        margin: 5px;
     }
     .annoweb.anno-checkbox.anno-check-slider {
-        display: none;
+        /*! opacity: 0; */
         position: relative;
+        width: 40px;
+        z-index: 0;
     }
     .annoweb.anno-checkbox.anno-check-slider + label:before, .annoweb.anno-checkbox.anno-check-slider + label:after {
         content: '';
     }
-    .annoweb.anno-checkbox.anno-check-slider + label:after {
-        background: red;
-        position: absolute;
-        left: -20px;
+    .annoweb.anno-checkbox.anno-check-slider + label:before {
         width: 20px;
         height: 20px;
+        background: #fff;
+        border-radius: 100%;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        top: 4px;
+        left: 4px;
+        box-shadow: 0 0 10px -5px;
+        border: 2px solid #707070;
+        transition: left 0.3s cubic-bezier(.65,.05,.36,1);
+    }
+    .annoweb.anno-checkbox.anno-check-slider:checked + label:before {
+        left: 26px;
+    }
+    .annoweb.anno-checkbox.anno-check-slider + label:after {
+        background: white;
+        position: absolute;
+        width: 50px;
+        height: 28px;
         
+        border: 2px solid #707070;
+        border-radius: 20px;
+        transition: background 0.5s ease;
+        left: 0;
     }
     .annoweb.anno-checkbox.anno-check-slider + label:hover:after {
-        background: yellow;
+        background: #CFD;
     }
     .annoweb.anno-checkbox.anno-check-slider:checked + label:after {
-        background: green;
+        background: #76F2A0;
     }
     /* use .annoweb.anno-supported on webshites which wish to improve there vistors UX*/ 
+    .annoweb.anno-input {
+        padding: 10px 5px;
+        border: 2px solid #707070;
+        border-radius: 5px;
+    }
+    .annoweb.anno-feature-options {
+        position: absolute;
+        bottom: 24px;
+        left: -50px;
+        background: #fff;
+        box-shadow: 0 0 15px -10px;
+        min-width: 250px;
+    }
+    .annoweb.anno-feature-container {
+        position: relative;
+        padding: 15px;
+    }
+    .annoweb.anno-tag:first-child {
+        margin-left: 0;
+    }
+    .annoweb.anno-tag {
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
 </style>
 
 
@@ -809,7 +862,7 @@
  
      <div id="ad-mobilebackfill-News_World_Asia" class="ad-mobilebackfill" data-ad-config='{"network":"\/6735\/n6735","site":"NPRMOBILE","zone":"News_World_Asia","targets":{"testserver":"false","storyId":"248967111","agg":"103943429","blog":"103943429"},"location":"mobilebackfill","deferred":false,"isBetweenContent":true}'></div>
  
- </aside>   <p><span class="annoweb anno-light anno-default-yellow">The Bitcoin currency is unregulated and can easily cross international borders</span>. Its lack of ties to a banking system give Bitcoin a degree of anonymity that has led critics to say it eases transactions in the drug trade and other illegal markets.</p>   <p>As Reuters reports, "<span class="annoweb anno-light anno-default-purple">Chinese nationals are major participants in the [Bitcoin] market and hold an outsized share of the total number of Bitcoins in circulation</span>. Shanghai-based BTC China has recently become the world's largest Bitcoin exchange by volume."</p>   <p>A Utah couple, Austin Craig and Beccy Bingham-Craig, recently tested the spreading acceptance of Bitcoin by using it to conduct all of their transactions in the U.S. and abroad for more than 100 days. On <a href="http://hereandnow.wbur.org/2013/12/04/bitcoin-or-bust">WBUR's Here & Now</a>, Austin Craig describes one of their first purchases:</p>   <blockquote class="edTag"><div>   <p>"I have a cousin that's a dentist, and I had a toothache right before we were leaving on our trip. So he agreed to see me, and I set him up to take Bitcoin. And then a couple days ago he called me, and he was like, 'So, I haven't cashed in my Bitcoin, and I just checked the balance and it's really high now.' "</p>   </div></blockquote>
+ </aside>   <p><span class="annoweb anno-highlight anno-default-yellow">The Bitcoin currency is unregulated and can easily cross international borders</span>. Its lack of ties to a banking system give Bitcoin a degree of anonymity that has led critics to say it eases transactions in the drug trade and other illegal markets.</p>   <p>As Reuters reports, "<span class="annoweb anno-highlight anno-default-purple">Chinese nationals are major participants in the [Bitcoin] market and hold an outsized share of the total number of Bitcoins in circulation</span>. Shanghai-based BTC China has recently become the world's largest Bitcoin exchange by volume."</p>   <p>A Utah couple, Austin Craig and Beccy Bingham-Craig, recently tested the spreading acceptance of Bitcoin by using it to conduct all of their transactions in the U.S. and abroad for more than 100 days. On <a href="http://hereandnow.wbur.org/2013/12/04/bitcoin-or-bust">WBUR's Here & Now</a>, Austin Craig describes one of their first purchases:</p>   <blockquote class="edTag"><div>   <p>"I have a cousin that's a dentist, and I had a toothache right before we were leaving on our trip. So he agreed to see me, and I set him up to take Bitcoin. And then a couple days ago he called me, and he was like, 'So, I haven't cashed in my Bitcoin, and I just checked the balance and it's really high now.' "</p>   </div></blockquote>
  </div>
   <!--googleoff: index--><div class="tags">
        <ul>
@@ -1073,6 +1126,21 @@
 <div class="annoweb anno-quick-access-bar">
     <div class="annoweb anno-container">
         <div class="annoweb anno-group">
+            <div class="annoweb anno-feature-options">
+                <div class="annoweb anno-feature-container">
+                    <h1>Settings for Highlights</h1>
+                    <h4>Categories</h4>
+                    <div class="annoweb anno-input">
+                        <span class="annoweb anno-tag anno-highlight-filter anno-default-yellow">
+                            Interesting
+                        </span>
+                        <span class="annoweb anno-tag anno-highlight-filter anno-default-purple">
+                            Use case
+                        </span>
+
+                    </div>
+                </div>
+            </div>
             <input type="checkbox" id="annoweb-highlights-opt" class="annoweb anno-checkbox anno-check-slider" />
             <label for="annoweb-highlights-opt">
                 Highlights
