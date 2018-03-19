@@ -1,5 +1,31 @@
 ## Welcome to Annotation-Extension
 
-This project is currently in the research/design phasel; feel free to pitch in your ideas on [github](https://github.com/MANTENN/Annoweb/issues/1).
+# Annoweb
+This plugin will enhance the user-experience on Chrome and Firefox by providing a way for users to annotate web pages.
+
+While there is a plugin to annotate webpages(https://hypothes.is/), it requires an account to take notes/highlight anything on the webpage.
+## Planned Features
+<ul>
+  <li>
+    Customizable Categories
+  </li>
+    <li>
+    Customizable Colors for Highlights
+  </li>
+  <li>
+    Styled Comments--WWYISG editor
+  </li>
+</ul>
+
+## Planned Features v2
+<ul>
+  <li>
+    Sync
+      <li>
+        FireFox mobile
+      </li>
+  </li>
+</ul>
+
 
 Powered by [Jekyll](https://jekyllrb.com/) and [GitHub](https://github.com/).
