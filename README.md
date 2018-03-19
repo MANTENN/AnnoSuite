@@ -14,7 +14,8 @@ While there is a plugin to annotate webpages(https://hypothes.is/), it requires 
     Styled Comments--WWYISG editor
   </li>
 </ul>
-## Planned Features V2
+
+## Planned Features V.2
 <ul>
   <li>
     Sync
