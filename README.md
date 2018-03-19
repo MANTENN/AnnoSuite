@@ -15,7 +15,7 @@ While there is a plugin to annotate webpages(https://hypothes.is/), it requires 
   </li>
 </ul>
 
-## Planned Features V.2
+## Planned Features v2
 <ul>
   <li>
     Sync
