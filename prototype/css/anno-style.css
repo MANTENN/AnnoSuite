@@ -1,0 +1,148 @@
+.annoweb.anno-comment {
+    padding: 15px;
+    position: absolute;
+    left: -100px;
+    min-width: 100px;
+    max-width: 250px;
+    width: 100%;
+}
+.annoweb.anno-comment.anno-right {
+    right: 0;
+}
+.annoweb.anno-comment.anno-default-white.anno-paper {
+    background: #fff;
+    box-shadow: 0 0 15px -5px #0003;
+}
+.annoweb.anno-highlight.anno-default-yellow, .annoweb.anno-tag.anno-highlight-filter.anno-default-yellow {
+    background: #fdffb3;
+}
+.annoweb.anno-highlight.anno-default-purple, .annoweb.anno-tag.anno-highlight-filter.anno-default-purple {
+    background: #d5b3ff;
+}
+.annoweb.anno-quick-access-bar {
+    height: 50px;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 0 15px -5px #0003;
+    z-index: 9999999999;
+}
+.annoweb.anno-container {
+    max-width: 1300px;
+    width: 100%;
+    position: relative; 
+    margin: 0 auto;
+}
+body.annoweb.anno-spacer {
+    padding-bottom: 50px;
+}
+.annoweb.anno-spacer .annoweb.anno-container {
+    /* max-width: 100%; */
+}
+.annoweb.anno-group {
+    position: relative;
+    display: inline;
+    margin: 5px;
+}
+.annoweb.anno-checkbox.anno-check-slider {
+    /*! opacity: 0; */
+    position: relative;
+    width: 40px;
+    z-index: 0;
+}
+.annoweb.anno-checkbox.anno-check-slider + label:before, .annoweb.anno-checkbox.anno-check-slider + label:after {
+    content: '';
+}
+.annoweb.anno-checkbox.anno-check-slider + label:before {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    top: -3px;
+    left: 4px;
+    box-shadow: 0 0 15px -5px #0003;
+    border: 2px solid #707070;
+    transition: left 0.3s cubic-bezier(.65,.05,.36,1);
+}
+.annoweb.anno-checkbox.anno-check-slider:checked + label:before {
+    left: 26px;
+}
+.annoweb.anno-checkbox.anno-check-slider + label:after {
+    background: white;
+    position: absolute;
+    width: 50px;
+    height: 28px;
+    
+    border: 2px solid #707070;
+    border-radius: 20px;
+    transition: background 0.5s ease;
+    left: 0;
+}
+.annoweb.anno-checkbox.anno-check-slider + label:hover:after {
+    background: #CFD;
+}
+.annoweb.anno-checkbox.anno-check-slider:checked + label:after {
+    background: #76F2A0;
+}
+/* use .annoweb.anno-supported on webshites which wish to improve there vistors UX*/ 
+.annoweb.anno-input {
+    padding: 10px 5px;
+    border: 2px solid #707070;
+    border-radius: 5px;
+}
+.annoweb.anno-feature-options {
+    position: absolute;
+    bottom: 92px;
+    right: 0px;
+    background: #fff;
+    box-shadow: 0 0 15px -5px #0003;
+    min-width: 340px;
+}
+.annoweb.anno-feature-container {
+    position: relative;
+    padding: 15px;
+}
+.annoweb.anno-tag:first-child {
+    margin-left: 0;
+}
+.annoweb.anno-tag {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.annoweb.anno-feature-container h1 {
+    font-size: 20px;
+    font-weight:  bold;
+}
+
+.annoweb.anno-settings.anno-settings-section h2 {
+    color: #75abf3;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+span.annoweb.anno-tag.anno-highlight-filter:hover {
+    cursor: pointer;    
+}
+.anno-default-yellow:hover {
+    background-color: #f7fb6c;
+}
+.annoweb.anno-field.anno-group h4 {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.annoweb.anno-panel {
+    display: block;
+    padding: 12px;
+}
+
+.annoweb.anno-group label {
+    line-height: 30px;
+    padding-left: 10px;
+}
