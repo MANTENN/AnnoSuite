@@ -6,11 +6,20 @@
     max-width: 250px;
     width: 100%;
 }
+.annoweb.anno-comment.anno-right {
+    right: 0;
+}
+.annoweb.anno-comment {
+    border: 2px solid;
+    box-shadow: 0 0 15px -5px #0003;
+}
 .annoweb.anno-comment.anno-default-white.anno-paper {
-    background: #fff7d0;
-    box-shadow: 0 0 30px -10px #00000054;
-    border-radius: 5px;
-    border: 2px solid #ece6c5;
+    background: #fff;
+    border-color:#ece6c5;
+}
+.annoweb.anno-comment.anno-default-yellow.anno-note {
+    background: #fef3ac;
+    border-color: #ffea73;
 }
 .annoweb.anno-highlight.anno-default-yellow, .annoweb.anno-tag.anno-highlight-filter.anno-default-yellow {
     background: #fdffb3;
@@ -21,11 +30,11 @@
 .annoweb.anno-quick-access-bar {
     height: 50px;
     background: #fff;
-    border-top: 2px solid #ccc;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    border-top: 2px solid #ccc;
     box-shadow: 0 0 15px -5px #0003;
     z-index: 9999999999;
 }
@@ -35,6 +44,17 @@
     position: relative; 
     margin: 0 auto;
 }
+.annoweb.anno-float:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.annoweb.anno-fl {
+    float: left;
+}
+.annoweb.anno-fr {
+    float: right;
+}
 body.annoweb.anno-spacer {
     padding-bottom: 50px;
 }
@@ -43,6 +63,8 @@ body.annoweb.anno-spacer {
 }
 .annoweb.anno-group {
     position: relative;
+}
+.anno-panel .annoweb.anno-group {
     display: inline;
     margin: 5px;
 }
@@ -97,13 +119,12 @@ body.annoweb.anno-spacer {
 }
 .annoweb.anno-feature-options {
     position: absolute;
-    bottom: -10px;
-    right: 5px;
+    bottom: 92px;
+    right: 0px;
     background: #fff;
-    border-radius: 5px;
+    border: 2px solid #ccc;
     box-shadow: 0 0 15px -5px #0003;
     min-width: 340px;
-    border: 2px solid #ccc;
 }
 .annoweb.anno-feature-container {
     position: relative;
@@ -143,16 +164,7 @@ span.annoweb.anno-tag.anno-highlight-filter:hover {
     display: block;
     padding: 12px;
 }
-.annoweb.anno-panel:after {
-    content: '';
-    clear:both;
-}
-.annoweb.anno-panel.anno-panel-left {
-    float: left;
-}
-.annoweb.anno-panel.anno-panel-right {
-    float: right;
-}
+
 .annoweb.anno-group label {
     line-height: 30px;
     padding-left: 10px;

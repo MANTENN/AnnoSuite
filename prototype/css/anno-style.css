@@ -35,6 +35,17 @@
     position: relative; 
     margin: 0 auto;
 }
+.annoweb.anno-float:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.annoweb.anno-fl {
+    float: left;
+}
+.annoweb.anno-fr {
+    float: right;
+}
 body.annoweb.anno-spacer {
     padding-bottom: 50px;
 }
@@ -43,6 +54,8 @@ body.annoweb.anno-spacer {
 }
 .annoweb.anno-group {
     position: relative;
+}
+.anno-panel .annoweb.anno-group {
     display: inline;
     margin: 5px;
 }
