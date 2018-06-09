@@ -1,3 +1,12 @@
+/* --- APP BASE STYLES ----*/
+.annoweb * {
+    margin: 0;
+    padding: 0;
+}
+.annoweb label {
+    position: relative;
+}
+
 .annoweb.anno-comment {
     padding: 15px;
     position: absolute;
@@ -83,33 +92,34 @@ body.annoweb.anno-spacer {
     background: #fff;
     border-radius: 100%;
     position: absolute;
-    left: 0;
+    left: -34px;
     z-index: 1;
-    top: -3px;
-    left: 4px;
+    top: -4px;
     box-shadow: 0 0 15px -5px #0003;
     border: 2px solid #707070;
     transition: left 0.3s cubic-bezier(.65,.05,.36,1);
 }
 .annoweb.anno-checkbox.anno-check-slider:checked + label:before {
-    left: 26px;
+    left: -34px;
+    background-color: #74ee9d;
 }
 .annoweb.anno-checkbox.anno-check-slider + label:after {
     background: white;
     position: absolute;
-    width: 50px;
+    width: 28px;
     height: 28px;
     
     border: 2px solid #707070;
     border-radius: 20px;
     transition: background 0.5s ease;
-    left: 0;
+    left: -38px;
+    top: -8px;
 }
 .annoweb.anno-checkbox.anno-check-slider + label:hover:after {
     background: #CFD;
 }
 .annoweb.anno-checkbox.anno-check-slider:checked + label:after {
-    background: #76F2A0;
+    background: #FFF;
 }
 /* use .annoweb.anno-supported on webshites which wish to improve there vistors UX*/ 
 .annoweb.anno-input {
@@ -167,5 +177,4 @@ span.annoweb.anno-tag.anno-highlight-filter:hover {
 
 .annoweb.anno-group label {
     line-height: 30px;
-    padding-left: 10px;
 }
