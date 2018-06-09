@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GUI Prototype</title>
+        <link href="./prototype/css/anno-styles.css" rel="stylesheet">
+        <script src="./prototype/js/annoweb.js"></script>
+    </head>
+    <body>
+        <div class="annoweb anno-quick-access-bar">
+            <div class="annoweb anno-container">
+                <div class="annoweb anno-feature-options">
+                    <div class="annoweb anno-feature-container">
+                        <div class="annoweb anno-header anno-float">
+                            <h1 class="annoweb anno-title anno-fl">Settings</h1>
+                            <span class="annoweb anno-close anno-fr">X</span>
+                        </div>
+                        <div class="annoweb anno-settings anno-settings-section">
+                            <h2>Highlights</h2>
+                            <div class="annoweb anno-field anno-group">
+                                <h4>Categories</h4>
+                                <div class="annoweb anno-input">
+                                    <span class="annoweb anno-tag anno-highlight-filter anno-default-yellow">
+                                        Interesting
+                                    </span>
+                                    <span class="annoweb anno-tag anno-highlight-filter anno-default-purple">
+                                        Use case
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="annoweb anno-settings anno-settings-section">
+                            <h2 style="color: #75abf3;font-weight: bold;margin-bottom:  5px;">Comments</h2>
+                            <div class="annoweb anno-field anno-group">
+                                <h4 style="font-weight:  bold;margin-bottom:  5px;">Categories</h4>
+                                <div class="annoweb anno-input">
+                                    <span class="annoweb anno-tag anno-highlight-filter anno-default-yellow">Personal Thoughts</span>
+                                    <span class="annoweb anno-tag anno-highlight-filter anno-default-purple">Ideas</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="annoweb anno-panel anno-panel-left">
+                    <div class="annoweb anno-group">
+
+                        <input type="checkbox" id="annoweb-highlights-opt" class="annoweb anno-checkbox anno-check-slider">
+                        <label for="annoweb-highlights-opt" style="
+        " title="Hide/Show comments">
+                            Highlights
+                        </label>
+                    </div>
+                    <div class="annoweb anno-group">
+
+                        <input type="checkbox" id="annoweb-comments-opt" class="annoweb anno-checkbox anno-check-slider">
+                        <label for="annoweb-comments-opt">Comments</label>
+                    </div>
+
+                </div>
+                <div class="annoweb anno-panel anno-panel-right">
+                    Settings
+                    <span class="annoweb anno-arrow anno-collapsed">
+                        <i class="material-icons">close</i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

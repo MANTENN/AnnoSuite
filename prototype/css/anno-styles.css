@@ -81,6 +81,7 @@ body.annoweb.anno-spacer {
     /*! opacity: 0; */
     position: relative;
     width: 40px;
+    opacity: 0;
     z-index: 0;
 }
 .annoweb.anno-checkbox.anno-check-slider + label:before, .annoweb.anno-checkbox.anno-check-slider + label:after {
@@ -123,9 +124,14 @@ body.annoweb.anno-spacer {
 }
 /* use .annoweb.anno-supported on webshites which wish to improve there vistors UX*/ 
 .annoweb.anno-input {
-    padding: 10px 5px;
+    padding: .4em;
     border: 2px solid #707070;
     border-radius: 5px;
+}
+.annoweb.anno-input:after {
+    content: "";
+    clear: both;
+    display: block;
 }
 .annoweb.anno-feature-options {
     position: absolute;
@@ -144,20 +150,36 @@ body.annoweb.anno-spacer {
     margin-left: 0;
 }
 .annoweb.anno-tag {
+    display: block;
+    float: left;
     padding: 5px 10px;
     border-radius: 5px;
     margin-left: 5px;
+    border: 2px solid #969696
 }
-
+.annoweb.anno-tag.anno-color {
+    border-radius: 50%;
+    height: .675em;
+    width: .675em;
+    padding: .8em;
+}
+.annoweb.anno-tag.anno-color.add-color {
+    color: #ccc;
+    border: 2px solid #ccc;
+    background-color: #fff;
+}
 .annoweb.anno-feature-container h1 {
     font-size: 20px;
     font-weight:  bold;
+    margin-bottom: .5em
 }
-
+.annoweb.anno-settings.anno-settings-section {
+    margin-bottom: .5em;
+}
 .annoweb.anno-settings.anno-settings-section h2 {
     color: #75abf3;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: .5em;
 }
 span.annoweb.anno-tag.anno-highlight-filter:hover {
     cursor: pointer;    
