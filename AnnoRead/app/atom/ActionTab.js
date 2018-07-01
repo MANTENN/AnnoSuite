@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import {
+    StyleSheet,
     Dimensions,
     Platform,
     View,
+    TouchableHighlight,
     TouchableOpacity,
     Button,
     Text
@@ -10,14 +12,14 @@ import {
 
 export default class ActionTab extends Component {
     render () {
-        let {title, secondaryTitle} = this.props;
+        let {title, _title, onPress, _onPress} = this.props;
         return (
             <View style={styles.ActionTab}>
-                <TouchableOpacity style={styles.ActionButton}>
+                <TouchableHighlight style={styles.ActionButton} onPress={onPress} underlayColor={styleConsts.ActionButton.underlayColor}>
                     <Text style={styles.ActionButtonText}>{title}</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.AlternativeActionButton}>
-                    <Text style={styles.AlternativeActionButtonText}>{secondaryTitle}</Text>
+                </TouchableHighlight>
+                <TouchableOpacity style={styles.AlternativeActionButton} onPress={_onPress}>
+                    <Text style={styles.AlternativeActionButtonText}>{_title}</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -26,8 +28,9 @@ export default class ActionTab extends Component {
 
 const styleConsts = {
     ActionButton: {
-        paddingH: 50,
-        paddingV: 15
+        paddingH: 10,
+        paddingV: 10,
+        underlayColor: '#21B248'
     }
 }
 const stylesConsts = {
@@ -35,33 +38,40 @@ const stylesConsts = {
         color: '#707070'
     }
 }
-const styles = {
+const styles = StyleSheet.create({
     ActionTab: {
-        flex: 3,
+        flex: 1.75,
         flexDirection: 'column'
     },
     ActionButton: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: '#2CC354',
         borderRadius: 50,
+        marginTop: -30,
         paddingTop: styleConsts.ActionButton.paddingV,
         paddingBottom: styleConsts.ActionButton.paddingV,
         paddingLeft: styleConsts.ActionButton.paddingH,
-        paddingRight: styleConsts.ActionButton.paddingH
+        paddingRight: styleConsts.ActionButton.paddingH,
+        zIndex: 9
     },
     ActionButtonText: {
-        fontSize: 16,
+        fontSize: 20,
         color: '#fff',
         textAlign: 'center',
         fontWeight: 'bold',
     },
     AlternativeActionButton: {
-
+        flex: 1,
+        alignSelf: 'center',
+        justifyContent: 'center'
     },
     AlternativeActionButtonText: {
         color: stylesConsts.tabButton.color,
         fontSize: 16,
-        textAlign: 'center',
-        flex: 1
+        fontWeight: 'bold',
+        textAlign: 'center'
     }
     
-}
+})
