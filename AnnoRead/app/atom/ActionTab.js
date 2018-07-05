@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         zIndex: 9
     },
     ActionButtonText: {
-        fontSize: 20,
+        fontSize: 18,
         color: '#fff',
         textAlign: 'center',
         fontWeight: 'bold',

@@ -7,7 +7,9 @@ export default class H1 extends Component {
         const styles = StyleSheet.create({
             h1: {
                 fontWeight: bold ? 'bold' : null,
-                fontSize: 28
+                fontSize: 28,
+                marginTop: 10,
+                marginBottom: 20
             }
         })
         return (

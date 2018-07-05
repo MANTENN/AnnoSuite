@@ -6,7 +6,7 @@ import {
     Image,
     Text
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Feather';
 
 export default class TabItem extends Component {
     render () {
@@ -14,7 +14,7 @@ export default class TabItem extends Component {
         return (
             <View style={styles.TabItem}>
                 <TouchableOpacity onPress={onPress} style={styles.TabButton}>
-                    <Icon name={icon} color={styleConsts.TabButtonText.color} style={{fontSize: 20, fontWeight: 'bold', textAlign: 'center'}}/>
+                    <Icon name={icon} color={styleConsts.TabButtonText.color} style={styles.TabIcon}/>
                     <Text style={styles.TabButtonText}>{title}</Text>
                 </TouchableOpacity>
             </View>
@@ -25,7 +25,7 @@ export default class TabItem extends Component {
 const styleConsts = {
     TabButton: {
         paddingH: 10,
-        paddingV: 19
+        // paddingV: 12
     },
     TabButtonText: {
         color: '#707070'
@@ -35,7 +35,8 @@ const styleConsts = {
 const styles = StyleSheet.create({
     TabItem: {
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignSelf: 'center'
     },
     TabButton: {
         paddingTop: styleConsts.TabButton.paddingV,
@@ -44,7 +45,10 @@ const styles = StyleSheet.create({
         paddingRight: styleConsts.TabButton.paddingH
     },
     TabIcon: {
-        flex: 1
+        // flex: 1,
+        fontSize: 21,
+        fontWeight: 'bold',
+        textAlign: 'center'
     },
     TabButtonText: {
         fontSize: 16,

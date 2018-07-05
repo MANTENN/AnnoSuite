@@ -6,6 +6,7 @@ import {
   Image,
   Text,
   View,
+  TouchableWithoutFeedback,
   ScrollView
 } from 'react-native';
 
@@ -15,29 +16,51 @@ export default class Book extends Component {
     constructor() {
         super()
     }
+    state = {
+        opened: false
+    }
     render() {
+        let { opened } = this.state
         let {image, title, author, description} = this.props;
 
-        const styles = StyleSheet.create({
+        const styles = opened ?
+        StyleSheet.create({
             book: {
                 flex: 1,
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                zIndex: 2
+            }
+        }) :
+        StyleSheet.create({
+            book: {
+                flex: 1,
+                height: 450,
+                width: '100%',
                 marginBottom: 10,
                 padding: 10,
                 backgroundColor: "#fff",
                 shadowColor: 'black',
-                shadowOpacity: 0.25,
+                shadowOpacity: 0.15,
                 shadowRadius: 90,
                 borderRadius: 10,
+                borderColor: '#ccc',
+                borderWidth: 2,
+                zIndex: 1,
             }
         })
 
         return (
-            <View style={styles.book}>
-                <Image source={image}/>
-                <H1 bold>{title}</H1>
-                <Text>{author.firstName + " " + author.middleName + " " + author.lastName}</Text>
-                <Text>{description}</Text>
-            </View>
+            //Perform some action there, styling is messed up
+            <TouchableWithoutFeedback onPress={() => false}>
+                <View style={styles.book}>
+                    <Image source={image}/>
+                    <H1 bold>{title}</H1>
+                    <Text>{author.firstName + " " + author.middleName + " " + author.lastName}</Text>
+                    <Text>{description}</Text>
+                </View>
+            </TouchableWithoutFeedback>
         );
     }
 }

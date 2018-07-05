@@ -9,41 +9,52 @@ import {
   ScrollView
 } from 'react-native';
 
-import Book from './component/Book'
-import BottomNavBar from './component/BottomNavBar'
+import Books from './component/Books'
+import ActionBar from './component/ActionBar'
 
 export default class Root extends Component {
     constructor() {
       super()
+      this.Overlay = this.Overlay.bind(this)
     }
+    state = {
+      isOverlayVisible: true
+    }
+    styles = StyleSheet.create({
+      overlay: {
+        position: 'absolute',
+        left: 1,
+        top: 0,
+        flex: 1,  
+        zIndex: 0,
+        backgroundColor: 'orange'
+      },
+      overlayHidden: {
 
+      }
+    })
+
+    Overlay() {
+      let { isOverlayVisible } = this.state;
+      let {overlay, overlayHidden} = this.styles;
+      return (
+        <View style={isOverlayVisible ? overlay : overlayHidden}/>
+      );
+    }
     render () {
-        const book = {
-          image: null,
-          title: "The American Revolution",
-          description: "Lorem ipsum...",
-          author: {
-            firstName: "John",
-            middleName: "Shorty",
-            lastName: "Stanford"
-          }
-        }
+        let { Overlay } = this;
         return (
           <React.Fragment>
             <View style={styles.container}>
                <StatusBar
-                  hidden={false}
+                  hidden={true}
                   backgroundColor="#000"
                   barStyle="dark-content"
                 />
-              <ScrollView style={{flex: 1, flexDirection: 'row', padding: 20}}>
-                <Text style={{fontWeight: 'bold', fontSize: 30}}>Self-Improvement</Text>
-                <Book {...book} />
-                <Book {...book} />
-                <Book {...book} />
-              </ScrollView>
+              <Books />
             </View>
-            <BottomNavBar />
+            <ActionBar />
+            <Overlay />
         </React.Fragment>
         );
     }
@@ -52,9 +63,6 @@ export default class Root extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // padding: 20,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
     backgroundColor: '#fff',
   }
 });
