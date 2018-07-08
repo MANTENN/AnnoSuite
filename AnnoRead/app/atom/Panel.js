@@ -11,7 +11,13 @@ export default class Panel extends Component {
     }
     hideOverlay() {
         let { hideOverlay } = this.props
-        this.setState({bottom: 1000})
+        this.setState({bottom: new Animated.Value(0)})
+        Animated.timing(
+            this.state.bottom, {
+                toValue: -10000,
+                duration: 1000
+            }
+        ).start();
         hideOverlay()
     }
     componentDidMount() {
@@ -26,7 +32,7 @@ export default class Panel extends Component {
     render () {
         let { hideOverlay } = this
         let { bottom } = this.state;
-        let {overlay, children, style} = this.props;
+        let { overlay, style } = this.props;
         return overlay ? (
             <Animated.View style={{...StyleSheet.flatten(style), bottom}}>
                 <TouchableWithoutFeedback onPress={hideOverlay}>
