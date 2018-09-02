@@ -12,7 +12,12 @@ import {
 import Books from './component/Books'
 import ActionBar from './component/ActionBar'
 
-export default class Root extends Component {
+
+interface State {
+  isOverlayVisible: boolean
+}
+
+export default class Root extends Component<any, State> {
     constructor() {
       super()
       this.Overlay = this.Overlay.bind(this)

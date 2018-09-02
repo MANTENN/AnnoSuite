@@ -6,7 +6,15 @@ import Book from './Book'
 
 import Realm from 'realm'
 
-export default class Books extends Component {
+interface book {
+    name: string,
+    properties: Object
+}
+export interface State {
+    books: book[],
+}
+
+export default class Books extends Component<any, State> {
 
     state = {
         books: []

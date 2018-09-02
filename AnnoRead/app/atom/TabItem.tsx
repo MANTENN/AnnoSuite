@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, EventHandler } from 'react';
 import {
     StyleSheet,
     View,
@@ -8,7 +8,14 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
-export default class TabItem extends Component {
+export interface Props {
+    title: string,
+    icon: string,
+    onPress: EventHandler,
+    active: boolean,
+}
+
+export default class TabItem extends Component<Props> {
     render () {
         let {title, icon, onPress, active} = this.props;
         return (

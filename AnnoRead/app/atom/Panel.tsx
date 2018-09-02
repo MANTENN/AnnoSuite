@@ -1,8 +1,14 @@
 import React , { Component } from 'react'
 import { TouchableWithoutFeedback, Text, View, Animated, StyleSheet } from 'react-native'
 
-export default class Panel extends Component {
-    constructor(props) {
+export interface Props {
+    hideOverlay: Function,
+    overlay: boolean,
+    style:  Object
+}
+
+export default class Panel extends Component<Props> {
+    constructor(props: Props) {
         super(props)
         this.hideOverlay = this.hideOverlay.bind(this)
     }

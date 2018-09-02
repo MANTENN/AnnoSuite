@@ -12,9 +12,17 @@ import TabItem from '../atom/TabItem'
 import ActionTab from '../atom/ActionTab'
 import Panel from '../atom/Panel'
 
-export default class ActionBar extends Component {
-  constructor() {
-    super()
+export interface Props {
+  children: Object
+}
+
+interface State {
+  overlay: number
+}
+
+export default class ActionBar extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props)
 
     // tihs.Panel = this.handleToggle.bind(this)
   }
@@ -22,10 +30,10 @@ export default class ActionBar extends Component {
     //0: false, 1: filter, 2: more actions, 3: search
     overlay: 0 
   }
-  PrimaryButton = (props) => {
+  PrimaryButton = (props: Prop) => {
     return props.children;
   }
-  handleToggle(btn, id) {
+  handleToggle(btn: String, id: Number) {
     console.log(btn, "was pressed!")
     this.setState({
       overlay: id,

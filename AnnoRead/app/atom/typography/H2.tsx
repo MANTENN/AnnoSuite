@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet} from 'react-native';
 
-export default class H2 extends Component {
+export interface Props {
+    children: Object,
+    bold?: boolean
+}
+
+export default class H2 extends Component<Props> {
     render() {
         let {children} = this.props;
         const styles = StyleSheet.create({
@@ -10,7 +15,7 @@ export default class H2 extends Component {
             }
         })
         return (
-            <Text {...this.props} style={styles.h1}>
+            <Text {...this.props} style={styles.h2}>
                 {children}
             </Text>
         );

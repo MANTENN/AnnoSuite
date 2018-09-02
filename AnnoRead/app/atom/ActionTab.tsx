@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, EventHandler } from 'react';
 import {
     StyleSheet,
     Dimensions,
@@ -10,7 +10,14 @@ import {
     Text
 } from 'react-native';
 
-export default class ActionTab extends Component {
+export interface Props {
+    title: string,
+    _title: string,
+    onPress: EventHandler,
+    _onPress: EventHandler,
+}
+
+export default class ActionTab extends Component<Props> {
     render () {
         let {title, _title, onPress, _onPress} = this.props;
         return (

@@ -7,14 +7,28 @@ import {
   Text,
   View,
   TouchableWithoutFeedback,
-  ScrollView
+  ScrollView,
+  ImageURISource
 } from 'react-native';
 
 import H1 from '../atom/typography/H1'
 
-export default class Book extends Component {
-    constructor() {
-        super()
+interface Author {
+    firstName: String,
+    middleName?: String,
+    lastName: String
+}
+export interface Props {
+    image: ImageURISource[],
+    title: String,
+    author: Author,//Convert to Author Object
+    description: String
+
+}
+
+export default class Book extends Component<Props> {
+    constructor(props: Props) {
+        super(props)
     }
     state = {
         opened: false
