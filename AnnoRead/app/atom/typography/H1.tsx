@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Text, StyleSheet} from 'react-native';
 
 export interface Props {
-    children: Object,
-    bold?: boolean
+    children: any,
+    bold?: boolean,
+    style?: any
 }
 
 export default class H1 extends Component<Props> {
     render() {
-        let {children, bold} = this.props;
+        let {children, bold, style} = this.props;
         const styles = StyleSheet.create({
             h1: {
                 fontWeight: bold ? 'bold' : null,
@@ -18,7 +19,7 @@ export default class H1 extends Component<Props> {
             }
         })
         return (
-            <Text {...this.props} style={styles.h1}>
+            <Text {...this.props} style={{...style, ...StyleSheet.flatten(styles.h1)}}>
                 {children}
             </Text>
         );

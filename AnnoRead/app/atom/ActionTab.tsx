@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
         paddingBottom: styleConsts.ActionButton.paddingV,
         paddingLeft: styleConsts.ActionButton.paddingH,
         paddingRight: styleConsts.ActionButton.paddingH,
-        zIndex: 9
     },
     ActionButtonText: {
         fontSize: 18,

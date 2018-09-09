@@ -72,7 +72,7 @@ export default class Book extends Component<Props> {
                 <View style={styles.book}>
                     <Image source={image}/>
                     <H1 bold>{title}</H1>
-                    <Text>{author.firstName + " " + author.middleName + " " + author.lastName}</Text>
+                    {/* <Text>{author.firstName + " " + author.middleName + " " + author.lastName}</Text> */}
                     <Text>{description}</Text>
                 </View>
             </TouchableWithoutFeedback>

@@ -12,40 +12,47 @@ import TabItem from '../atom/TabItem'
 import ActionTab from '../atom/ActionTab'
 import Panel from '../atom/Panel'
 
+import realm from './Realm'
 
 interface State {
-  overlay: Number
+  overlay: Number,
+  actionBtnResume?: boolean,
+  title?: any
 }
 
 export default class ActionBar extends Component<any, State> {
   constructor(props: any) {
     super(props)
-
-    // tihs.Panel = this.handleToggle.bind(this)
   }
   state = {
-    //0: false, 1: filter, 2: more actions, 3: search
+    title: "",
+    actionBtnResume: false,
     overlay: 0 
   }
+
+
   PrimaryButton = (props: any) => {
     return props.children;
   }
   handleToggle(id: Number) {
+    let { overlay } = this.state;
     this.setState({
-      overlay: id,
+      overlay: id
     })
   }
+
   render () {
     // fetch()
     let {PrimaryButton} = this;
+    let { actionBtnResume } = this.state;
     return (
     <React.Fragment>
-      <Panel style={styles.panel} overlay={this.state.overlay} hideOverlay={() => this.handleToggle.call(this, 0)}/>
       <View style={styles.container}>
         <TabItem title={'Filter'} onPress={() => this.handleToggle.call(this, 1)} icon={'filter'} />
-        <ActionTab title={'RESUME'} onPress={() => console.log('Action Btn Pressed!')} _title={'More Options'} _onPress={() => this.handleToggle.call(this, 2)} />
+        <ActionTab title={actionBtnResume ? 'RESUME' : 'Import Books'} onPress={() => console.log('Action Btn Pressed!')} _title={'More Options'} _onPress={() => this.handleToggle.call(this, 2)} />
         <TabItem title={'Search'} onPress={() => this.handleToggle.call(this, 3)} icon={'search'}/>
       </View>
+      <Panel overlay={this.state.overlay} hideOverlay={() => this.handleToggle.call(this, 0)}/>
     </React.Fragment>
     );
   }
@@ -57,20 +64,6 @@ const stylesConsts = {
   }
 }
 const styles = StyleSheet.create({
-  panel: {
-    flex: 1,
-    width: '100%',
-    // height: '100%',
-    padding: 10,
-    backgroundColor: '#fff',
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    zIndex: 1,
-    opacity: 1
-  },
   container: {
     borderTopWidth: 2,
     borderColor: '#C1C1C1',
