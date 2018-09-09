@@ -18,10 +18,11 @@ interface Author {
     middleName?: String,
     lastName: String
 }
+
 export interface Props {
     image: ImageURISource[],
     title: String,
-    author: Author,//Convert to Author Object
+    author: Author, //Convert to Author Object
     description: String
 
 }

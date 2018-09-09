@@ -11,8 +11,8 @@ import Icon from 'react-native-vector-icons/Feather';
 export interface Props {
     title: string,
     icon: string,
-    onPress: EventHandler,
-    active: boolean,
+    onPress: () => void,
+    active?: boolean,
 }
 
 export default class TabItem extends Component<Props> {
@@ -33,6 +33,7 @@ const styleConsts = {
     TabButton: {
         paddingH: 10,
         // paddingV: 12
+        paddingV: 0,
     },
     TabButtonText: {
         color: '#707070'

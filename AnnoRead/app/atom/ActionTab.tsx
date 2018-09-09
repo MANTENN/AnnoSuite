@@ -13,8 +13,8 @@ import {
 export interface Props {
     title: string,
     _title: string,
-    onPress: EventHandler,
-    _onPress: EventHandler,
+    onPress: () => void ,
+    _onPress: () => void,
 }
 
 export default class ActionTab extends Component<Props> {

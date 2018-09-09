@@ -1,13 +1,20 @@
-import React , { Component } from 'react'
+import React from 'react'
 import { TouchableWithoutFeedback, Text, View, Animated, StyleSheet } from 'react-native'
 
 export interface Props {
+    children?: any,
     hideOverlay: Function,
-    overlay: boolean,
-    style:  Object
+    overlay: Number,
+    style: any
 }
 
-export default class Panel extends Component<Props> {
+interface State {
+    bottom: any,
+    panelHeight?: Number,
+    panelText?: String,
+}
+
+export default class Panel extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props)
         this.hideOverlay = this.hideOverlay.bind(this)
@@ -17,11 +24,11 @@ export default class Panel extends Component<Props> {
     }
     hideOverlay() {
         let { hideOverlay } = this.props
-        this.setState({bottom: new Animated.Value(0)})
+        // this.setState({bottom: new Animated.Value(0)})
         Animated.timing(
             this.state.bottom, {
                 toValue: -10000,
-                duration: 1000
+                duration: 3000
             }
         ).start();
         hideOverlay()
@@ -30,21 +37,20 @@ export default class Panel extends Component<Props> {
         Animated.timing(
             this.state.bottom,
             {
-                toValue: 100,
-                duration: 1000
+                toValue: 60,
+                duration: 3000
             }
         ).start();  
     }
+
     render () {
         let { hideOverlay } = this
         let { bottom } = this.state;
         let { overlay, style } = this.props;
         return overlay ? (
-            <Animated.View style={{...StyleSheet.flatten(style), bottom}}>
+            <Animated.View style={{position: 'absolute', backgroundColor: '#fff', bottom, width: '100%'}}>
                 <TouchableWithoutFeedback onPress={hideOverlay}>
-                    <View style={{flex: 1}}>
-                        <Text>Panel</Text>  
-                    </View>
+                    {this.props.children}
                 </TouchableWithoutFeedback>
             </Animated.View>
         ) : (null)

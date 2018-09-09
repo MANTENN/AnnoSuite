@@ -42,7 +42,7 @@ export default class Books extends Component<any, State> {
                     }
                 }
             ]
-        }).then(realm => {
+        }).then((realm: any) => {
             realm.write(() => {
                 realm.create('Book', {
                     id: 1,
@@ -82,9 +82,9 @@ export default class Books extends Component<any, State> {
         })
     }
 
-    _keyExtractor = ({id}, key) => "" + id;
+    _keyExtractor = ({id}: any, key: Number) => "" + id;
 
-    _renderItem = ({item}) => {
+    _renderItem = ({item} : any) => {
         return (
             <Book {...item} style={{flex: 1}}
 />

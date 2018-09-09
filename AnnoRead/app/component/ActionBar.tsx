@@ -12,16 +12,13 @@ import TabItem from '../atom/TabItem'
 import ActionTab from '../atom/ActionTab'
 import Panel from '../atom/Panel'
 
-export interface Props {
-  children: Object
-}
 
 interface State {
-  overlay: number
+  overlay: Number
 }
 
-export default class ActionBar extends Component<Props, State> {
-  constructor(props: Props) {
+export default class ActionBar extends Component<any, State> {
+  constructor(props: any) {
     super(props)
 
     // tihs.Panel = this.handleToggle.bind(this)
@@ -30,11 +27,10 @@ export default class ActionBar extends Component<Props, State> {
     //0: false, 1: filter, 2: more actions, 3: search
     overlay: 0 
   }
-  PrimaryButton = (props: Prop) => {
+  PrimaryButton = (props: any) => {
     return props.children;
   }
-  handleToggle(btn: String, id: Number) {
-    console.log(btn, "was pressed!")
+  handleToggle(id: Number) {
     this.setState({
       overlay: id,
     })
@@ -44,11 +40,11 @@ export default class ActionBar extends Component<Props, State> {
     let {PrimaryButton} = this;
     return (
     <React.Fragment>
-      <Panel style={styles.panel} overlay={this.state.overlay} hideOverlay={() => this.handleToggle.call(this, 'Overlay', 0)}/>
+      <Panel style={styles.panel} overlay={this.state.overlay} hideOverlay={() => this.handleToggle.call(this, 0)}/>
       <View style={styles.container}>
-        <TabItem title={'Filter'} onPress={() => this.handleToggle.call(this, 'Filter', 1)} icon={'filter'} />
-        <ActionTab title={'RESUME'} onPress={() => console.log('Action Btn Pressed!')} _title={'More Options'} _onPress={() => this.handleToggle.call(this, 'More Actions', 2)} />
-        <TabItem title={'Search'} onPress={() => this.handleToggle.call(this, 'Search', 3)} icon={'search'}/>
+        <TabItem title={'Filter'} onPress={() => this.handleToggle.call(this, 1)} icon={'filter'} />
+        <ActionTab title={'RESUME'} onPress={() => console.log('Action Btn Pressed!')} _title={'More Options'} _onPress={() => this.handleToggle.call(this, 2)} />
+        <TabItem title={'Search'} onPress={() => this.handleToggle.call(this, 3)} icon={'search'}/>
       </View>
     </React.Fragment>
     );
@@ -64,7 +60,7 @@ const styles = StyleSheet.create({
   panel: {
     flex: 1,
     width: '100%',
-    height: '100%',
+    // height: '100%',
     padding: 10,
     backgroundColor: '#fff',
     borderTopLeftRadius: 10,
