@@ -70,7 +70,7 @@ export default class Book extends Component<Props> {
             //Perform some action there, styling is messed up
             <TouchableWithoutFeedback onPress={() => false}>
                 <View style={styles.book}>
-                    <Image source={image}/>
+                    {/* <Image source={image}/> */}
                     <H1 bold>{title}</H1>
                     {/* <Text>{author.firstName + " " + author.middleName + " " + author.lastName}</Text> */}
                     <Text>{description}</Text>

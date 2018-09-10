@@ -20,7 +20,6 @@ export default class Books extends Component<any, State> {
         books: realm.objects('Books')
     }
 
-
     _keyExtractor = ({id}: any, key: Number) => "" + id;
 
     _renderItem = ({item} : any) => {
@@ -31,40 +30,19 @@ export default class Books extends Component<any, State> {
         )
     }
     render() {
-        const books = [{
+        realm.write(() => {
+            realm.create('Books', {
                 id: 1,
-                image: null,
-                title: "The American Revolution",
-                description: "Lorem ipsum...",
+                image: '',
+                title: 'False Appetite',
+                description: 'Jonathon Levy',
                 author: {
-                    firstName: "John",
-                    middleName: "Shorty",
-                    lastName: "Stanford"
+                    firstName: 'John',
+                    middleName: 'F.',
+                    lastName: 'Carvis'
                 }
-            },
-            {
-                id: 2,
-                image: null,
-                title: "The American Revolution",
-                description: "Lorem ipsum...",
-                author: {
-                    firstName: "John",
-                    middleName: "Shorty",
-                    lastName: "Stanford"
-                }
-            },
-            {
-                id: 3,
-                image: null,
-                title: "The American Revolution",
-                description: "Lorem ipsum...",
-                author: {
-                    firstName: "John",
-                    middleName: "Shorty",
-                    lastName: "Stanford"
-                }
-            }
-        ]
+            })
+        })
         return (
             <FlatList
                 style={{
@@ -72,7 +50,7 @@ export default class Books extends Component<any, State> {
                     width: '100%',
                     backgroundColor: '#f1f1f1'
                 }}
-                ListHeaderComponent={<H1 bold style={{padding: 20}}>Self-Improvement</H1>}
+                ListHeaderComponent={<H1 color={"#383838"} bold style={{padding: 20}}>Self-Improvement</H1>}
                 ListFooterComponent={<View style={{ height: 0, marginBottom: 30}}></View>}
                 data={this.state.books}
                 extraData={this.state.books}

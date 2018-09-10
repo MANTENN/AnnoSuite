@@ -27,6 +27,7 @@ export default class Search extends React.Component {
         catch(e) {
             console.error("Error", e)
         }
+        this.setState({searches: realm.objects('Searches'), searchQuery: ""})
     }
     render() {
         let categories = [0,0,0,0,0,0,0,0,0,0]
@@ -37,7 +38,7 @@ export default class Search extends React.Component {
                 <H4 color={"#00ACF8"} bold>By Category</H4>
                 <ScrollView horizontal style={{flex: 1, flexDirection: 'row',paddingVertical: 20}}>
                     {categories.map((catName, id) => (
-                        <View key={id} style={{height: 50, width: 50, borderRadius: 50, borderColor: '#000', borderWidth: 1, marginLeft: 10}}>
+                        <View key={id} style={{height: 50, width: 50, borderRadius: 50, borderColor: '#000', borderWidth: 1, marginLeft: 10, flex: 1, justifyContent: 'center', alignContent: 'center'}}>
                             <Text>
                                 {catName}
                             </Text>
@@ -56,7 +57,7 @@ export default class Search extends React.Component {
                 </ScrollView >
                 <TextInput
                     underlineColorAndroid={'rgba(0,0,0,0)'}
-                    style={{height: 40, borderColor: "#ccc", borderWidth: 2, borderRadius: 10, paddingHorizontal: 5}}
+                    style={{height: 40, borderColor: "#ccc", borderWidth: 2, borderRadius: 10, paddingHorizontal: 10}}
                     value={this.state.searchQuery}
                     onChangeText={
                         (searchQuery) => this.setState({searchQuery})

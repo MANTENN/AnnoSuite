@@ -5,12 +5,13 @@ import {
   Button,
   Text,
   View,
-  TouchableWithoutFeedback
+  TouchableHighlight
 } from 'react-native';
 
 import TabItem from '../atom/TabItem'
 import ActionTab from '../atom/ActionTab'
 import Panel from '../atom/Panel'
+import ActionButton from '../atom/ActionButton';
 
 import realm from './Realm'
 
@@ -53,6 +54,9 @@ export default class ActionBar extends Component<any, State> {
         <TabItem title={'Search'} onPress={() => this.handleToggle.call(this, 3)} icon={'search'}/>
       </View>
       <Panel overlay={this.state.overlay} hideOverlay={() => this.handleToggle.call(this, 0)}/>
+      <ActionButton onPress={() => console.log("Action BTN Pressed!")}>
+        Import Books
+      </ActionButton>
     </React.Fragment>
     );
   }
@@ -70,11 +74,12 @@ const styles = StyleSheet.create({
     height: 60,
     flexDirection: 'row',
     justifyContent: 'center',
+    alignSelf: 'flex-end',
     alignItems: 'flex-start',
     backgroundColor: '#fff',
     shadowColor: 'black',
     shadowOpacity: 0.25,
-    shadowRadius: 90
+    shadowRadius: 90,
   },
   welcome: {
     color: stylesConsts.tabButton.color,
