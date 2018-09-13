@@ -149,9 +149,14 @@ android {
 dependencies {
     implementation project(':realm')
     implementation project(':react-native-vector-icons')
+    implementation project(':react-native-fetch-blob')
+    implementation project(':react-native-firebase')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:23.0.1"
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    // Firebase dependencies
+    implementation "com.google.android.gms:play-services-base:15.0.1"
+    implementation "com.google.firebase:firebase-core:16.0.1"
 }
 
 // Run this once to be able to run the application with BUCK
