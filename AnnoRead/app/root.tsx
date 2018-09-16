@@ -76,7 +76,7 @@ export default class Root extends Component<Props, State> {
         let { Overlay } = this;
         return (
           <React.Fragment>
-            <View style={styles.container} ref={(content) => {}}>
+            <View style={styles.container}>
                <StatusBar
                   hidden={true}
                   backgroundColor="#000"
